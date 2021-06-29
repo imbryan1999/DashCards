@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigate_route/card_model/card_main.dart';
+import 'dashcards.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SafeArea(
-          child: DashCardApp(),
+          child: DashCards(),
         ),
       ),
     );
