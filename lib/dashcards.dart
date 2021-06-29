@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:navigate_route/card_routes/sch_call.dart';
+import 'package:navigate_route/card_routes/app_sample.dart';
+import 'package:navigate_route/card_routes/resume_sub.dart';
+import 'package:navigate_route/card_routes/loan_cal.dart';
 
 class DashCards extends StatefulWidget {
   @override
@@ -29,7 +33,9 @@ class _DashCardsState extends State<DashCards> {
                     colors: [Color(0xff32383E), Color(0xff17191C)]),
               ),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ResumeSubCard()));
+                },
                 child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25.0),
@@ -83,7 +89,9 @@ class _DashCardsState extends State<DashCards> {
                     colors: [Color(0xff32383E), Color(0xff17191C)]),
               ),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ScheduleCallCard()));
+                },
                 child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25.0),
@@ -137,7 +145,9 @@ class _DashCardsState extends State<DashCards> {
                     colors: [Color(0xff32383E), Color(0xff17191C)]),
               ),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoanCalCard()));
+                },
                 child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25.0),
@@ -191,7 +201,9 @@ class _DashCardsState extends State<DashCards> {
                     colors: [Color(0xff32383E), Color(0xff17191C)]),
               ),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AppSampleCard()));
+                },
                 child: Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25.0),

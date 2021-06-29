@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:navigate_route/card_model/card_main.dart';
 import 'dashcards.dart';
 
 void main() => runApp(MyApp());
@@ -13,6 +12,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
+        backgroundColor: Color(0xff1E1E1E),
         body: SafeArea(
           child: DashCards(),
         ),
