@@ -16,9 +16,7 @@ class _MyAppState extends State<DashCardApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: SafeArea(
-          child: DashCard(),
-        ),
+        body: DashCard(),
       ),
       routes: {
         '': (context) => DashCard(),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'dashmodel.dart';
 
 class DashCard extends StatelessWidget {
-
   List<DashModel> contents = [
     DashModel(
         contentPic: 'assets/resume_sub.png',
@@ -30,13 +30,17 @@ class DashCard extends StatelessWidget {
       backgroundColor: Color(0xff1E1E1E),
       body: Center(
         child: GridView.builder(
-          gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 15, crossAxisSpacing: 15),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisExtent: 235,
+            childAspectRatio: MediaQuery.of(context).size.width /
+                (MediaQuery.of(context).size.height / 1.7),
+          ),
           itemBuilder: (context, position) {
             return Container(
               // margin: EdgeInsets.all(12.0),
               child: Card(
+                margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),
                 ),
@@ -49,7 +53,7 @@ class DashCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     gradient: LinearGradient(
-                      // card background color
+                        // card background color
                         colors: [Color(0xff32383E), Color(0xff17191C)]),
                   ),
                   child: InkWell(
@@ -69,13 +73,16 @@ class DashCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(25.0),
                           ),
                           gradient: LinearGradient(
-                            // card background color
+                              // card background color
                               colors: [Color(0xff32383E), Color(0xff17191C)]),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset(contents[position].contentPic),
+                            SizedBox(
+                              height: 12.0,
+                            ),
                             Text(
                               contents[position].contentTitle,
                               style: TextStyle(
