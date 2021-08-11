@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import 'dashmodel.dart';
 
 class DashCard extends StatelessWidget {
+  DashCard({
+    Key? key,
+    this.height = 160,
+    this.width = 300,
+  }) : super(key: key);
+
+  final double height;
+  final double width;
+
+  // final Widget customWidget;
+
   List<DashModel> contents = [
     DashModel(
         contentPic: 'assets/resume_sub.png',
@@ -38,43 +50,57 @@ class DashCard extends StatelessWidget {
           ),
           itemBuilder: (context, position) {
             return Container(
-              // margin: EdgeInsets.all(12.0),
-              child: Card(
-                margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25.0),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0xff32383E),
+                    Color(0xff17191C),
+                  ],
                 ),
-                child: Container(
-                  padding: EdgeInsets.all(3.0),
-                  width: 142.45,
-                  height: 179.22,
-                  decoration: ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    gradient: LinearGradient(
-                        // card background color
-                        colors: [Color(0xff32383E), Color(0xff17191C)]),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(
-                          context, '/${cardCategory[position]}');
-                    },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xff000000),
+                    blurRadius: 10.0, // soften the shadow
+                    spreadRadius: 0.0, //extend the shadow
+                  )
+                ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/${cardCategory[position]}');
+                  },
+                  child: Container(
+                    height: height,
+                    width: width,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color(0xffC8D5E1).withOpacity(0.09),
+                          Color(0xff000000).withOpacity(0.2),
+                        ],
                       ),
-                      child: Container(
-                        width: 131.43,
-                        height: 165.43,
-                        decoration: ShapeDecoration(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(1.5), // white outline width
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
                           gradient: LinearGradient(
-                              // card background color
-                              colors: [Color(0xff32383E), Color(0xff17191C)]),
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color(0xff32383E),
+                              Color(0xff17191C),
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
